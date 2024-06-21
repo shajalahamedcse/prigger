@@ -1,0 +1,8 @@
+curl -X POST http://localhost:8080/tasks \
+     -H "Content-Type: application/json" \
+     -H "X-Secret-Key: mysecretkey" \
+     -d '{
+           "description": "Test Task",
+           "baremetal_private_ip": "192.168.1.1",
+           "baremetal_id": "bm-1234"
+         }'
