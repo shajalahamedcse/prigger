@@ -28,7 +28,7 @@ func InitDB() {
 func InsertTask(description, baremetalPrivateIP, baremetalID string) error {
     query := `
         INSERT INTO tasks (description, state, baremetal_private_ip, baremetal_id)
-        VALUES ($1, 'creating', $2, $3)
+        VALUES ($1, 'create', $2, $3)
     `
     _, err := db.Exec(query, description, baremetalPrivateIP, baremetalID)
     return err
