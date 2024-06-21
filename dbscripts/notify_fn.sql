@@ -28,3 +28,8 @@ CREATE TRIGGER trigger_task_insert
 BEFORE INSERT ON tasks
 FOR EACH ROW
 EXECUTE FUNCTION handle_task_insert();
+
+-- Create trigger for notify_task
+CREATE TRIGGER tasks_notify
+AFTER INSERT ON tasks
+FOR EACH ROW EXECUTE FUNCTION notify_task();
